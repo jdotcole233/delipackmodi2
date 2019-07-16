@@ -27,6 +27,8 @@ class SearchRiderController: UIViewController {
     @IBOutlet weak var locationFinderView: UIView!
     @IBOutlet weak var pickUpLocationResult: UITextField!
     @IBOutlet weak var deliveryLocationResult: UITextField!
+    
+    @IBOutlet weak var searcRiderButtonVar: UIButton!
     var googleMapView: GMSMapView?
     
    
@@ -52,23 +54,36 @@ class SearchRiderController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pickUpLocationResult.layer.shadowColor = UIColor.darkGray.cgColor
+        pickUpLocationResult.layer.shadowOffset = CGSize(width: 0, height: 0)
+        pickUpLocationResult.layer.shadowOpacity = 1.0
+        pickUpLocationResult.drawableLeft(drawableImage: UIImage.init(named: "icons8-search-24")!)
+        pickUpLocationResult.addTarget(self, action: Selector.init(("testFunc")), for: UIControl.Event.touchUpInside)
+        
+    
+        deliveryLocationResult.layer.shadowColor = UIColor.darkGray.cgColor
+        deliveryLocationResult.layer.shadowOffset = CGSize(width: 0, height: 0)
+        deliveryLocationResult.layer.shadowOpacity = 1.0
+        deliveryLocationResult.drawableLeft(drawableImage: UIImage.init(named: "icons8-search-24")!)
+        
+        searcRiderButtonVar.layer.cornerRadius = 5
+        locationFinderView.layer.shadowColor = UIColor.darkGray.cgColor
+        locationFinderView.layer.shadowOpacity = 1.0
+        locationFinderView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        mapviewdisplay.bringSubviewToFront(locationFinderView)
+//        mapviewdisplay.layer.zPosition = 0
+//        locationFinderView.layer.zPosition = 500
+//        locationFinderView.isHidden = true
         
      
        
+
+    }
     
-        
-        
-//        let camera = GMSMutableCameraPosition.camera(withLatitude: lat, longitude: lng, zoom: 16.0)
-//        mapviewdisplay.animate(toZoom: 16.0)
-        
-//        let marker = GMSMarker()
-//        marker.position = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-//        marker.title = "East Legon"
-//        marker.snippet = "Ghana"
-//        marker.map = mapviewdisplay
-        
-        print("map view index \(mapviewdisplay.layer.zPosition)");
-        print("map view index \(locationFinderView.layer.zPosition)");
+    
+    func testFunc ()
+    {
+        openAutoCompleteSearch();
 
     }
     
@@ -178,4 +193,18 @@ extension SearchRiderController: GMSAutocompleteViewControllerDelegate {
     }
     
     
+}
+
+
+extension UITextField {
+    func drawableLeft(drawableImage: UIImage){
+        let drawableImageIcon = UIImageView(frame: CGRect(x: 10, y: 10, width: 25, height: 25))
+        drawableImageIcon.image = drawableImage
+        
+        let drawableImageIconContainer: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: 45))
+        drawableImageIconContainer.addSubview(drawableImageIcon)
+        leftView = drawableImageIconContainer
+        leftViewMode = .always
+        self.tintColor = .lightGray
+    }
 }

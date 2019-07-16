@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0104348A52784D9DFFFFDD62 /* libPods-deliPackiOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51AD0651872C96618D95CA8C /* libPods-deliPackiOSTests.a */; };
 		3405B8E022DD48EB00AED941 /* SearchRiderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3405B8DF22DD48EB00AED941 /* SearchRiderController.swift */; };
+		3405B8E222DE5F1700AED941 /* ReportProblemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3405B8E122DE5F1700AED941 /* ReportProblemController.swift */; };
 		346F994722DCF165007C928A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F994622DCF165007C928A /* AppDelegate.swift */; };
 		346F994922DCF165007C928A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F994822DCF165007C928A /* ViewController.swift */; };
 		346F994C22DCF165007C928A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346F994A22DCF165007C928A /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		20DBA1E763706635F8A7EE0F /* libPods-deliPackiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-deliPackiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		306B2B336E1E502946105E0E /* Pods-deliPackiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliPackiOS.debug.xcconfig"; path = "Target Support Files/Pods-deliPackiOS/Pods-deliPackiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		3405B8DF22DD48EB00AED941 /* SearchRiderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRiderController.swift; sourceTree = "<group>"; };
+		3405B8E122DE5F1700AED941 /* ReportProblemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemController.swift; sourceTree = "<group>"; };
 		346F994322DCF165007C928A /* deliPackiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deliPackiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346F994622DCF165007C928A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		346F994822DCF165007C928A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				346F994F22DCF166007C928A /* LaunchScreen.storyboard */,
 				346F995222DCF166007C928A /* Info.plist */,
 				3405B8DF22DD48EB00AED941 /* SearchRiderController.swift */,
+				3405B8E122DE5F1700AED941 /* ReportProblemController.swift */,
 			);
 			path = deliPackiOS;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				346F994922DCF165007C928A /* ViewController.swift in Sources */,
+				3405B8E222DE5F1700AED941 /* ReportProblemController.swift in Sources */,
 				3405B8E022DD48EB00AED941 /* SearchRiderController.swift in Sources */,
 				346F994722DCF165007C928A /* AppDelegate.swift in Sources */,
 			);
