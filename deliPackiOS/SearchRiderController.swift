@@ -13,12 +13,25 @@ import GooglePlaces
 class SearchRiderController: UIViewController {
     
     var choice: Int = 0
+    let lat = 5.6358
+    let lng = -0.1614
+    var pickUplat : Double = 0.0
+    var pickUpLng : Double = 0.0
+    var deliveryLat : Double = 0.0
+    var deliveryLng : Double = 0.0
+    var camera : GMSMutableCameraPosition?
+    var pickUpName: String = ""
+    var deliveryName: String = ""
+    var polyPath: GMSMutablePath?
     
     @IBOutlet weak var locationFinderView: UIView!
     @IBOutlet weak var pickUpLocationResult: UITextField!
     @IBOutlet weak var deliveryLocationResult: UITextField!
     var googleMapView: GMSMapView?
+    
    
+    
+    @IBOutlet var mapviewdisplay: GMSMapView!
     
     
     @IBAction func pickUpAutoCompleteSelect(_ sender: Any) {
@@ -39,31 +52,38 @@ class SearchRiderController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let lat = 5.6358
-        let lng = -0.1614
-        let camera = GMSMutableCameraPosition.camera(withLatitude: lat, longitude: lng, zoom: 16.0)
-        googleMapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        view = googleMapView
-        view.layer.zPosition = 0
-        print(googleMapView?.layer.zPosition)
         
-        if locationFinderView != nil {
-            print(locationFinderView.layer.zPosition)
-        }
-
+     
+       
+    
         
+        
+//        let camera = GMSMutableCameraPosition.camera(withLatitude: lat, longitude: lng, zoom: 16.0)
+//        mapviewdisplay.animate(toZoom: 16.0)
+        
+//        let marker = GMSMarker()
+//        marker.position = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+//        marker.title = "East Legon"
+//        marker.snippet = "Ghana"
+//        marker.map = mapviewdisplay
+        
+        print("map view index \(mapviewdisplay.layer.zPosition)");
+        print("map view index \(locationFinderView.layer.zPosition)");
+
+    }
+    
+    func mapPlot(Lat: Double, Lng: Double, title: String) -> GMSMarker {
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: lat, longitude: lng)
-        marker.title = "East Legon"
+        marker.position = CLLocationCoordinate2D(latitude: Lat, longitude: Lng)
+        marker.title = title
         marker.snippet = "Ghana"
-        marker.map = googleMapView
+        
+        return marker
     }
     
     
-    override func loadView() {
-    
-    }
+//    override func loadView() {
+//    }
 
     /*
     // MARK: - Navigation
@@ -79,7 +99,7 @@ class SearchRiderController: UIViewController {
         let pickUpAutoCompleteController = GMSAutocompleteViewController()
         pickUpAutoCompleteController.delegate = self
         
-        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue))!
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue) | UInt(GMSPlaceField.coordinate.rawValue))!
         
         pickUpAutoCompleteController.placeFields = fields
         
@@ -98,11 +118,45 @@ extension SearchRiderController: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         if choice == 1 {
             pickUpLocationResult.text = place.name
+            print("pick up cordinates \(place.coordinate)")
+            pickUplat = place.coordinate.latitude
+            pickUpLng = place.coordinate.longitude
+            pickUpName = place.name!
+            
+            if pickUplat != 0.0 && pickUpLng != 0.0 {
+                camera = GMSMutableCameraPosition.camera(withLatitude: pickUplat, longitude: pickUpLng, zoom: 13.0)
+                mapviewdisplay.animate(to: camera!)
+                var pickUpMarker = GMSMarker()
+                pickUpMarker = mapPlot(Lat: pickUplat, Lng: pickUpLng, title: pickUpName)
+                pickUpMarker.map = mapviewdisplay
+                polyPath?.add(CLLocationCoordinate2D(latitude: pickUplat, longitude: pickUpLng))
+            }
+            
             choice = 0
         } else if choice == 2 {
             deliveryLocationResult.text = place.name
+            print("delivery cordinates \(place.coordinate)")
+            deliveryLat = place.coordinate.latitude
+            deliveryLng = place.coordinate.longitude
+            deliveryName = place.name!
+            
+            if deliveryLat != 0.0 && deliveryLng != 0.0 {
+                camera = GMSMutableCameraPosition.camera(withLatitude: deliveryLat, longitude: deliveryLng, zoom: 13.0)
+                mapviewdisplay.animate(to: camera!)
+                var deliveryMarker = GMSMarker()
+                deliveryMarker = mapPlot(Lat: deliveryLat, Lng: deliveryLng, title: deliveryName)
+                deliveryMarker.map = mapviewdisplay
+                
+                
+                polyPath?.add(CLLocationCoordinate2D(latitude: deliveryLat, longitude: deliveryLng))
+                let polyLink = GMSPolyline(path: polyPath)
+                polyLink.map = mapviewdisplay
+                
+            }
+            
             choice = 0
         }
+        
         dismiss(animated: true, completion: nil)
     }
     

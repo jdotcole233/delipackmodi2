@@ -559,12 +559,20 @@
                                     <constraint firstItem="yZa-49-EI9" firstAttribute="leading" secondItem="90O-DM-R87" secondAttribute="leading" constant="10" id="p1P-Zr-Gxk"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyY-in-Mka" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="298" width="375" height="431"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="90O-DM-R87" firstAttribute="top" secondItem="bKG-pj-EeA" secondAttribute="top" constant="33" id="7bI-oh-yvS"/>
+                            <constraint firstItem="TyY-in-Mka" firstAttribute="top" secondItem="90O-DM-R87" secondAttribute="bottom" id="9IL-mD-dSp"/>
+                            <constraint firstItem="bKG-pj-EeA" firstAttribute="bottom" secondItem="TyY-in-Mka" secondAttribute="bottom" id="NKC-xf-lmf"/>
+                            <constraint firstItem="TyY-in-Mka" firstAttribute="trailing" secondItem="bKG-pj-EeA" secondAttribute="trailing" id="P5V-qb-JfC"/>
                             <constraint firstItem="bKG-pj-EeA" firstAttribute="bottom" secondItem="90O-DM-R87" secondAttribute="bottom" constant="431" id="StA-sc-c2N"/>
                             <constraint firstItem="90O-DM-R87" firstAttribute="top" secondItem="bKG-pj-EeA" secondAttribute="top" constant="33" id="hYm-4X-jvX"/>
+                            <constraint firstItem="TyY-in-Mka" firstAttribute="leading" secondItem="bKG-pj-EeA" secondAttribute="leading" id="hkj-Hm-S2Z"/>
                             <constraint firstItem="90O-DM-R87" firstAttribute="leading" secondItem="bKG-pj-EeA" secondAttribute="leading" id="sMd-i9-Cd5"/>
                             <constraint firstAttribute="trailing" secondItem="90O-DM-R87" secondAttribute="trailing" id="ucs-48-XfC"/>
                         </constraints>
@@ -574,6 +582,7 @@
                     <connections>
                         <outlet property="deliveryLocationResult" destination="Z3M-t4-zyD" id="feY-HX-qAb"/>
                         <outlet property="locationFinderView" destination="90O-DM-R87" id="RGl-VR-bpi"/>
+                        <outlet property="mapviewdisplay" destination="TyY-in-Mka" id="3JV-Qi-hSL"/>
                         <outlet property="pickUpLocationResult" destination="3XC-a0-40B" id="cIG-MU-9ij"/>
                     </connections>
                 </viewController>
