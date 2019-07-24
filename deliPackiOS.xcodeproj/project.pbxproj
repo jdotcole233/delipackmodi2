@@ -20,6 +20,8 @@
 		346F995122DCF166007C928A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346F994F22DCF166007C928A /* LaunchScreen.storyboard */; };
 		346F995C22DCF166007C928A /* deliPackiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F995B22DCF166007C928A /* deliPackiOSTests.swift */; };
 		346F996722DCF167007C928A /* deliPackiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F996622DCF167007C928A /* deliPackiOSUITests.swift */; };
+		34791B9E22E80838000F5BBD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34791B9D22E80838000F5BBD /* SignInViewController.swift */; };
+		34791BA022E80D03000F5BBD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34791B9F22E80D03000F5BBD /* SignUpViewController.swift */; };
 		BB78719386A01CDED49C16E1 /* libPods-deliPackiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DBA1E763706635F8A7EE0F /* libPods-deliPackiOS.a */; };
 		CF97B4586FBFA05D6734F844 /* libPods-deliPackiOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB1C608EA6830D6680BB63 /* libPods-deliPackiOSUITests.a */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		346F996222DCF167007C928A /* deliPackiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = deliPackiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		346F996622DCF167007C928A /* deliPackiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deliPackiOSUITests.swift; sourceTree = "<group>"; };
 		346F996822DCF167007C928A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34791B9D22E80838000F5BBD /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		34791B9F22E80D03000F5BBD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3FCB1C608EA6830D6680BB63 /* libPods-deliPackiOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-deliPackiOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51AD0651872C96618D95CA8C /* libPods-deliPackiOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-deliPackiOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6218C39885B6259D16AC739A /* Pods-deliPackiOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliPackiOSUITests.release.xcconfig"; path = "Target Support Files/Pods-deliPackiOSUITests/Pods-deliPackiOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				3427137122DE952100560713 /* ContactController.swift */,
 				3427137322DEA80300560713 /* ProfileController.swift */,
 				3427137522DEAB9E00560713 /* FindingRiderModalController.swift */,
+				34791B9D22E80838000F5BBD /* SignInViewController.swift */,
+				34791B9F22E80D03000F5BBD /* SignUpViewController.swift */,
 			);
 			path = deliPackiOS;
 			sourceTree = "<group>";
@@ -405,7 +411,9 @@
 				3427137222DE952100560713 /* ContactController.swift in Sources */,
 				3405B8E222DE5F1700AED941 /* ReportProblemController.swift in Sources */,
 				3405B8E022DD48EB00AED941 /* SearchRiderController.swift in Sources */,
+				34791B9E22E80838000F5BBD /* SignInViewController.swift in Sources */,
 				346F994722DCF165007C928A /* AppDelegate.swift in Sources */,
+				34791BA022E80D03000F5BBD /* SignUpViewController.swift in Sources */,
 				3427137622DEAB9E00560713 /* FindingRiderModalController.swift in Sources */,
 				3427137422DEA80300560713 /* ProfileController.swift in Sources */,
 			);
