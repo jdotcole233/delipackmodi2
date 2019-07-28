@@ -1,0 +1,6 @@
+framework module Pods_deliPackiOSTests {
+  umbrella header "Pods-deliPackiOSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

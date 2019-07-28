@@ -236,7 +236,9 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="new-password">
+                                                    <passwordRules key="passwordRules" passwordRulesDescriptor="password must be 8 characters long"/>
+                                                </textInputTraits>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ili-mi-xSF">
                                                 <rect key="frame" x="0.0" y="248" width="355" height="50"/>
@@ -245,7 +247,9 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="new-password">
+                                                    <passwordRules key="passwordRules" passwordRulesDescriptor="password must be 8 characters long"/>
+                                                </textInputTraits>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXK-v9-dS0">
                                                 <rect key="frame" x="0.0" y="310" width="355" height="50"/>
@@ -256,6 +260,9 @@
                                                 <state key="normal" title="SIGN UP NOW">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signUpButtonOnClick:" destination="ktf-5b-MtT" eventType="touchUpInside" id="ubN-EK-HaB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWH-8d-5dk">
                                                 <rect key="frame" x="0.0" y="372" width="34" height="30"/>
@@ -294,6 +301,11 @@
                         <viewLayoutGuide key="safeArea" id="xhp-tY-3TG"/>
                     </view>
                     <connections>
+                        <outlet property="customerConfirmPassword" destination="Ili-mi-xSF" id="EpM-7h-okB"/>
+                        <outlet property="customerEmail" destination="hnr-uP-dS4" id="bXi-hb-0po"/>
+                        <outlet property="customerFirstName" destination="Ac4-c6-j5G" id="eOX-em-XAM"/>
+                        <outlet property="customerLastName" destination="dEw-ai-dIE" id="ZGy-hZ-FgW"/>
+                        <outlet property="customerPassword" destination="qwY-4k-cJd" id="d61-uT-UfR"/>
                         <outlet property="signUpButton" destination="tXK-v9-dS0" id="ZI7-xF-3wA"/>
                     </connections>
                 </viewController>

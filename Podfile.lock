@@ -6,20 +6,24 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (3.0.3):
     - GoogleMaps/Base (= 3.0.3)
+  - Ringcaptcha (1.8.6)
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
+  - Ringcaptcha
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GoogleMaps
     - GooglePlaces
+    - Ringcaptcha
 
 SPEC CHECKSUMS:
   GoogleMaps: fd5c9fa58871781b9fb94d4936f19c69fe60ce32
   GooglePlaces: f09e76993c9c3ee4af8f4f7f535bb94d6aa3b649
+  Ringcaptcha: f5cfe4d580cc0822c18e865aff3a64e6030bb033
 
-PODFILE CHECKSUM: 3c7966488fb765e8a8cce1b3a3680b06e53b40bf
+PODFILE CHECKSUM: e9a010e145e29da4cf26c19bcf0a052a3fb056e1
 
 COCOAPODS: 1.7.4
