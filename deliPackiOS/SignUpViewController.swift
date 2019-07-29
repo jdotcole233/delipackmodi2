@@ -62,20 +62,26 @@ class SignUpViewController: UIViewController {
                 } else {
                     print("Let's go")
                     
-                    let customerInformation = [
-                        "firstName": firstName,
-                        "lastName": lastName,
-                        "email": email,
-                        "password": firstPassword
-                    ]
+//                    let customerInformation = [
+//                        "first_name": firstName,
+//                        "last_name": lastName,
+//                        "email": email,
+//                        "password": firstPassword
+//                    ]
                     
                     Ringcaptcha.verifyOnboard(withAppKey: "5ygi4e1y1o8esa6i3uqe", andSecretKey: "ni4ozypimupy6osi1y3a", in: self, delegate: nil, success: { (RingcaptchaVerification) in
-                          let registerURL = URL(string: "")
-                          var registerURLRequest = URLRequest(url: registerURL!)
-                        registerURLRequest.httpMethod = "POST"
-//                        registerURLRequest.httpBody = customerInformation as Data
-//                        let registerURLRequestSession = URLSession
-                          //registerURLRequest.httpMethod = "POST"
+                        
+                        var customerInformation = [
+                            "first_name": firstName,
+                            "last_name": lastName,
+                            "email": email,
+                            "password": firstPassword
+                        ]
+                        
+                        customerInformation["phone_number"] = RingcaptchaVerification?.phoneNumber
+                        
+                            self.networkRequestToServer(requestURL: "http://192.168.100.4:8000/api/registercutomer", requestMethod: "POST", requestData: customerInformation)
+                        
                          print("Successful")
                     }) { (RingcaptchaVerification) in
                         print("cancelled")
@@ -89,6 +95,48 @@ class SignUpViewController: UIViewController {
             }
         }
     }
+    
+    
+    
+    
+    func networkRequestToServer(requestURL: String, requestMethod: String, requestData: [String: Any]){
+        let registerURL = URL(string: requestURL)
+        let registerURLsession = URLSession.shared
+        var registerURLRequest = URLRequest(url: registerURL!)
+        registerURLRequest.httpMethod = requestMethod
+        do {
+            registerURLRequest.httpBody = try JSONSerialization.data(withJSONObject: requestData, options: JSONSerialization.WritingOptions.prettyPrinted)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        registerURLRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        registerURLRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        let alertDeliPack = DeliPackAlert.init(context: self, alertTitle: "", alertMessage: "Please wait")
+        alertDeliPack.showLoaderAlert()
+        let registrationTask = registerURLsession.dataTask(with: registerURLRequest, completionHandler: { (data, URLResponse, error) in
+            guard error == nil else {
+                return
+            }
+            
+            guard let responseData = data else {
+                return
+            }
+            
+            do {
+                if let jsonconverter = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any]{
+                    print(jsonconverter)
+                    alertDeliPack.hideLoaderAler()
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+            
+        })
+        
+        registrationTask.resume()
+    }
+    
+    
     // End of register customer click event
     
     

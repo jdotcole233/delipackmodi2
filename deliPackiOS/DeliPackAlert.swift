@@ -14,16 +14,20 @@ class DeliPackAlert {
     let alertTitle: String
     let alertMessage: String
     let context: UIViewController
+    var alertDisplay: UIAlertController?
+    
+    
     
     init(context: UIViewController, alertTitle: String, alertMessage: String) {
         self.alertTitle = alertTitle
         self.alertMessage = alertMessage
         self.context = context
+        alertDisplay = UIAlertController.init(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+
     }
     
     func showAlet() {
-        let alertDisplay = UIAlertController.init(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        alertDisplay.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
+        alertDisplay!.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
             switch UIAlertAction.style{
             case .default:
                     print("Default")
@@ -34,7 +38,25 @@ class DeliPackAlert {
                 
             }
         }))
-        context.present(alertDisplay, animated: true, completion: nil)
+        context.present(alertDisplay!, animated: true, completion: nil)
+    }
+    
+    func showLoaderAlert (){
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+        
+        guard alertDisplay == nil else {
+            return
+        }
+        alertDisplay!.view.addSubview(loadingIndicator)
+        context.present(alertDisplay!, animated: true, completion: nil)
+    }
+    
+    func hideLoaderAler() {
+        context.dismiss(animated: false, completion: nil)
     }
     
 }

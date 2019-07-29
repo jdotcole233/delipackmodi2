@@ -12,6 +12,9 @@
 		3427137222DE952100560713 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427137122DE952100560713 /* ContactController.swift */; };
 		3427137422DEA80300560713 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427137322DEA80300560713 /* ProfileController.swift */; };
 		3427137622DEAB9E00560713 /* FindingRiderModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427137522DEAB9E00560713 /* FindingRiderModalController.swift */; };
+		3439228D22EF1A50003DE59D /* WelcomeWalkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3439228C22EF1A50003DE59D /* WelcomeWalkthrough.storyboard */; };
+		3439228F22EF2FE4003DE59D /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439228E22EF2FE4003DE59D /* WalkthroughContentViewController.swift */; };
+		3439229122EF326C003DE59D /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439229022EF326C003DE59D /* WalkthroughPageViewController.swift */; };
 		346F994722DCF165007C928A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F994622DCF165007C928A /* AppDelegate.swift */; };
 		346F994922DCF165007C928A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F994822DCF165007C928A /* ViewController.swift */; };
 		346F994C22DCF165007C928A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346F994A22DCF165007C928A /* Main.storyboard */; };
@@ -51,6 +54,9 @@
 		3427137122DE952100560713 /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
 		3427137322DEA80300560713 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		3427137522DEAB9E00560713 /* FindingRiderModalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingRiderModalController.swift; sourceTree = "<group>"; };
+		3439228C22EF1A50003DE59D /* WelcomeWalkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeWalkthrough.storyboard; sourceTree = "<group>"; };
+		3439228E22EF2FE4003DE59D /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
+		3439229022EF326C003DE59D /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		346F994322DCF165007C928A /* deliPackiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deliPackiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346F994622DCF165007C928A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		346F994822DCF165007C928A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 				346F994622DCF165007C928A /* AppDelegate.swift */,
 				346F994822DCF165007C928A /* ViewController.swift */,
 				346F994A22DCF165007C928A /* Main.storyboard */,
+				3439228C22EF1A50003DE59D /* WelcomeWalkthrough.storyboard */,
 				346F994D22DCF166007C928A /* Assets.xcassets */,
 				346F994F22DCF166007C928A /* LaunchScreen.storyboard */,
 				346F995222DCF166007C928A /* Info.plist */,
@@ -146,6 +153,8 @@
 				34791B9F22E80D03000F5BBD /* SignUpViewController.swift */,
 				34791BA322ED1CC3000F5BBD /* DeliPackAlert.swift */,
 				34791BA522ED4B7F000F5BBD /* deliPackiOS-Bridging-Header.h */,
+				3439228E22EF2FE4003DE59D /* WalkthroughContentViewController.swift */,
+				3439229022EF326C003DE59D /* WalkthroughPageViewController.swift */,
 			);
 			path = deliPackiOS;
 			sourceTree = "<group>";
@@ -299,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3439228D22EF1A50003DE59D /* WelcomeWalkthrough.storyboard in Resources */,
 				346F995122DCF166007C928A /* LaunchScreen.storyboard in Resources */,
 				346F994E22DCF166007C928A /* Assets.xcassets in Resources */,
 				346F994C22DCF165007C928A /* Main.storyboard in Resources */,
@@ -417,6 +427,8 @@
 				3427137222DE952100560713 /* ContactController.swift in Sources */,
 				3405B8E222DE5F1700AED941 /* ReportProblemController.swift in Sources */,
 				3405B8E022DD48EB00AED941 /* SearchRiderController.swift in Sources */,
+				3439228F22EF2FE4003DE59D /* WalkthroughContentViewController.swift in Sources */,
+				3439229122EF326C003DE59D /* WalkthroughPageViewController.swift in Sources */,
 				34791B9E22E80838000F5BBD /* SignInViewController.swift in Sources */,
 				346F994722DCF165007C928A /* AppDelegate.swift in Sources */,
 				34791BA022E80D03000F5BBD /* SignUpViewController.swift in Sources */,
