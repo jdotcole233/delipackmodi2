@@ -15,6 +15,8 @@
 		3439228D22EF1A50003DE59D /* WelcomeWalkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3439228C22EF1A50003DE59D /* WelcomeWalkthrough.storyboard */; };
 		3439228F22EF2FE4003DE59D /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439228E22EF2FE4003DE59D /* WalkthroughContentViewController.swift */; };
 		3439229122EF326C003DE59D /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439229022EF326C003DE59D /* WalkthroughPageViewController.swift */; };
+		3439229322F7877A003DE59D /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439229222F7877A003DE59D /* WalkThroughViewController.swift */; };
+		3439229522F7B4DC003DE59D /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439229422F7B4DC003DE59D /* Customer.swift */; };
 		346F994722DCF165007C928A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F994622DCF165007C928A /* AppDelegate.swift */; };
 		346F994922DCF165007C928A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F994822DCF165007C928A /* ViewController.swift */; };
 		346F994C22DCF165007C928A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346F994A22DCF165007C928A /* Main.storyboard */; };
@@ -57,6 +59,8 @@
 		3439228C22EF1A50003DE59D /* WelcomeWalkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeWalkthrough.storyboard; sourceTree = "<group>"; };
 		3439228E22EF2FE4003DE59D /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		3439229022EF326C003DE59D /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		3439229222F7877A003DE59D /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
+		3439229422F7B4DC003DE59D /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		346F994322DCF165007C928A /* deliPackiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deliPackiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346F994622DCF165007C928A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		346F994822DCF165007C928A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				34791BA522ED4B7F000F5BBD /* deliPackiOS-Bridging-Header.h */,
 				3439228E22EF2FE4003DE59D /* WalkthroughContentViewController.swift */,
 				3439229022EF326C003DE59D /* WalkthroughPageViewController.swift */,
+				3439229222F7877A003DE59D /* WalkThroughViewController.swift */,
+				3439229422F7B4DC003DE59D /* Customer.swift */,
 			);
 			path = deliPackiOS;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				346F994922DCF165007C928A /* ViewController.swift in Sources */,
+				3439229522F7B4DC003DE59D /* Customer.swift in Sources */,
 				34791BA422ED1CC3000F5BBD /* DeliPackAlert.swift in Sources */,
 				3427137222DE952100560713 /* ContactController.swift in Sources */,
 				3405B8E222DE5F1700AED941 /* ReportProblemController.swift in Sources */,
@@ -433,6 +440,7 @@
 				346F994722DCF165007C928A /* AppDelegate.swift in Sources */,
 				34791BA022E80D03000F5BBD /* SignUpViewController.swift in Sources */,
 				3427137622DEAB9E00560713 /* FindingRiderModalController.swift in Sources */,
+				3439229322F7877A003DE59D /* WalkThroughViewController.swift in Sources */,
 				3427137422DEA80300560713 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

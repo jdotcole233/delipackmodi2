@@ -9,6 +9,11 @@
 import UIKit
 // import Ringcaptcha
 
+enum Result<T, E: Error> {
+    case success(T)
+    case failure(E)
+}
+
 class SignUpViewController: UIViewController {
 
     
@@ -80,7 +85,7 @@ class SignUpViewController: UIViewController {
                         
                         customerInformation["phone_number"] = RingcaptchaVerification?.phoneNumber
                         
-                            self.networkRequestToServer(requestURL: "http://192.168.100.4:8000/api/registercutomer", requestMethod: "POST", requestData: customerInformation)
+                            self.networkRequestToServer(requestURL: "http://192.168.100.3:8000/api/registercutomer", requestMethod: "POST", requestData: customerInformation)
                         
                          print("Successful")
                     }) { (RingcaptchaVerification) in
@@ -99,7 +104,7 @@ class SignUpViewController: UIViewController {
     
     
     
-    func networkRequestToServer(requestURL: String, requestMethod: String, requestData: [String: Any]){
+    func networkRequestToServer(requestURL: String, requestMethod: String, requestData: [String: Any], completion: @escaping (Result< Customer, Error>)->Void){
         let registerURL = URL(string: requestURL)
         let registerURLsession = URLSession.shared
         var registerURLRequest = URLRequest(url: registerURL!)
@@ -114,28 +119,36 @@ class SignUpViewController: UIViewController {
         let alertDeliPack = DeliPackAlert.init(context: self, alertTitle: "", alertMessage: "Please wait")
         alertDeliPack.showLoaderAlert()
         let registrationTask = registerURLsession.dataTask(with: registerURLRequest, completionHandler: { (data, URLResponse, error) in
-            guard error == nil else {
-                return
-            }
             
-            guard let responseData = data else {
-                return
+            DispatchQueue.main.async {
+                    guard error == nil else {
+                        return
+                    }
+                
+                    guard let responseData = data else {
+                        return
+                    }
+                
+                    do {
+                        if let jsonconverter = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any]{
+                            print(jsonconverter)
+                            alertDeliPack.hideLoaderAler()
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            
+                            if let searchRiderViewController = storyboard.instantiateViewController(withIdentifier: "searchRiderViewController") as? SearchRiderController{
+                                self.present(searchRiderViewController, animated: true, completion: nil)
+                            }
+                            //                    self.navigationController?.pushViewController(SearchRiderController(), animated: true)
+                            
+                        }
+                    } catch let error {
+                        print(error.localizedDescription)
+                    }
             }
-            
-            do {
-                if let jsonconverter = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any]{
-                    print(jsonconverter)
-                    alertDeliPack.hideLoaderAler()
-                }
-            } catch let error {
-                print(error.localizedDescription)
-            }
-            
         })
         
         registrationTask.resume()
     }
-    
     
     // End of register customer click event
     

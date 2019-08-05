@@ -20,6 +20,19 @@ class ViewController: UIViewController {
         registerButton.layer.cornerRadius = CGFloat(Int(bitPattern: 8))
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if UserDefaults.standard.bool(forKey: "hasViewedWalkthrough"){
+            return
+        }
+        
+        let storyboard = UIStoryboard(name: "WelcomeWalkthrough", bundle: nil)
+        if let startWalkthroughViewController = storyboard.instantiateViewController(withIdentifier: "walkthroughviewcontroller")
+            as? WalkThroughViewController
+        {
+            present(startWalkthroughViewController, animated: true, completion: nil)
+        }
+    }
 
 }
 
