@@ -37,7 +37,10 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Hro-Th-eqb" kind="show" id="5mu-Sx-XKX"/>
+                                                    <segue destination="Hro-Th-eqb" kind="show" id="5mu-Sx-XKX">
+                                                        <segue key="commit" inheritsFrom="parent" id="slU-VH-Ola"/>
+                                                        <segue key="preview" inheritsFrom="commit" id="W9h-kk-INW"/>
+                                                    </segue>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W09-65-2Wr">
@@ -79,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="133.74384236453201"/>
+            <point key="canvasLocation" x="-514" y="138"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="R54-el-xWY">
@@ -137,7 +140,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="McM-Gs-zZ9" kind="show" id="Vgd-F7-le2"/>
+                                                    <action selector="signButtonTappedWithSender:" destination="Hro-Th-eqb" eventType="touchUpInside" id="lD4-gc-ID0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ1-t8-JNl">
@@ -176,6 +179,10 @@
                     </view>
                     <connections>
                         <outlet property="signInButton" destination="pHR-t1-UoZ" id="f9P-cn-qWo"/>
+                        <outlet property="userPassword" destination="qGv-C2-3W0" id="tQ0-do-YMw"/>
+                        <outlet property="userPhoneNumber" destination="0J7-ok-BqY" id="iIg-Pj-xZe"/>
+                        <segue destination="McM-Gs-zZ9" kind="show" identifier="logintodashboard" id="aNf-Te-tXa"/>
+                        <segue destination="BAD-Vy-vUb" kind="show" identifier="loginPayment" id="oCV-pl-juy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ik3-vI-q7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -307,6 +314,7 @@
                         <outlet property="customerLastName" destination="dEw-ai-dIE" id="ZGy-hZ-FgW"/>
                         <outlet property="customerPassword" destination="qwY-4k-cJd" id="d61-uT-UfR"/>
                         <outlet property="signUpButton" destination="tXK-v9-dS0" id="ZI7-xF-3wA"/>
+                        <segue destination="McM-Gs-zZ9" kind="show" identifier="registertodashboard" id="gZ7-zC-GsY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77I-De-4s1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1409,7 +1417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBd-Bl-QIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5797.6000000000004" y="-2247.5262368815593"/>
+            <point key="canvasLocation" x="1903" y="-1631"/>
         </scene>
         <!--Finding Rider Modal Controller-->
         <scene sceneID="2oI-fh-HnC">
@@ -1571,13 +1579,13 @@
                                                 <rect key="frame" x="0.0" y="85.5" width="335" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Holidays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfw-qE-kCL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="151.5" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="24hrs" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYo-tl-BPc">
-                                                        <rect key="frame" x="286.5" y="0.0" width="48.5" height="20.5"/>
+                                                        <rect key="frame" x="206" y="0.0" width="129" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1735,6 +1743,8 @@
         <image name="logo_twitter copy" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vTd-gP-k9c"/>
+        <segue reference="aNf-Te-tXa"/>
+        <segue reference="5mu-Sx-XKX"/>
+        <segue reference="bAf-Jz-LLa"/>
     </inferredMetricsTieBreakers>
 </document>

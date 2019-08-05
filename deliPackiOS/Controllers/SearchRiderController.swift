@@ -23,6 +23,7 @@ class SearchRiderController: UIViewController {
     var pickUpName: String = ""
     var deliveryName: String = ""
     var polyPath: GMSMutablePath?
+    var customerLogged:Customer?
     
     @IBOutlet weak var locationFinderView: UIView!
     @IBOutlet weak var pickUpLocationResult: UITextField!
@@ -75,8 +76,9 @@ class SearchRiderController: UIViewController {
 //        locationFinderView.layer.zPosition = 500
 //        locationFinderView.isHidden = true
         
-     
-       
+        if let customer = customerLogged {
+            print(customer)
+        }
 
     }
     

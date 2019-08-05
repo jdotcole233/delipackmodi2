@@ -9,9 +9,9 @@
 import UIKit
 // import Ringcaptcha
 
-enum Result<T, E: Error> {
-    case success(T)
-    case failure(E)
+enum Result {
+    case success(Customer)
+    case failure(Error)
 }
 
 class SignUpViewController: UIViewController {
@@ -27,6 +27,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var customerConfirmPassword: UITextField!
     //End of register customer text field outlets
     var delipackalert: DeliPackAlert?
+    var networkService: NetworkService?
     
     
     
@@ -36,6 +37,7 @@ class SignUpViewController: UIViewController {
         
         customerPassword.isSecureTextEntry = true
         customerConfirmPassword.isSecureTextEntry = true
+        networkService = NetworkService(context: self)
         // Do any additional setup after loading the view.
         signUpButton.layer.cornerRadius = CGFloat(Int(bitPattern: 8))
         let viewtapped = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
@@ -84,8 +86,13 @@ class SignUpViewController: UIViewController {
                         ]
                         
                         customerInformation["phone_number"] = RingcaptchaVerification?.phoneNumber
-                        
-                            self.networkRequestToServer(requestURL: "http://192.168.100.3:8000/api/registercutomer", requestMethod: "POST", requestData: customerInformation)
+                        self.networkService?.networkRequestToServer(requestEndpoint: "registercutomer", requestMethod: "POST", requestData: customerInformation, completion: {[weak self] (result) in
+                            switch result{
+                            case .success(let user): self?.performSegue(withIdentifier: "registertodashboard", sender: user)
+                            default:
+                                break
+                            }
+                        })
                         
                          print("Successful")
                     }) { (RingcaptchaVerification) in
@@ -104,64 +111,20 @@ class SignUpViewController: UIViewController {
     
     
     
-    func networkRequestToServer(requestURL: String, requestMethod: String, requestData: [String: Any], completion: @escaping (Result< Customer, Error>)->Void){
-        let registerURL = URL(string: requestURL)
-        let registerURLsession = URLSession.shared
-        var registerURLRequest = URLRequest(url: registerURL!)
-        registerURLRequest.httpMethod = requestMethod
-        do {
-            registerURLRequest.httpBody = try JSONSerialization.data(withJSONObject: requestData, options: JSONSerialization.WritingOptions.prettyPrinted)
-        } catch let error {
-            print(error.localizedDescription)
-        }
-        registerURLRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        registerURLRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-        let alertDeliPack = DeliPackAlert.init(context: self, alertTitle: "", alertMessage: "Please wait")
-        alertDeliPack.showLoaderAlert()
-        let registrationTask = registerURLsession.dataTask(with: registerURLRequest, completionHandler: { (data, URLResponse, error) in
-            
-            DispatchQueue.main.async {
-                    guard error == nil else {
-                        return
-                    }
-                
-                    guard let responseData = data else {
-                        return
-                    }
-                
-                    do {
-                        if let jsonconverter = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any]{
-                            print(jsonconverter)
-                            alertDeliPack.hideLoaderAler()
-                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                            
-                            if let searchRiderViewController = storyboard.instantiateViewController(withIdentifier: "searchRiderViewController") as? SearchRiderController{
-                                self.present(searchRiderViewController, animated: true, completion: nil)
-                            }
-                            //                    self.navigationController?.pushViewController(SearchRiderController(), animated: true)
-                            
-                        }
-                    } catch let error {
-                        print(error.localizedDescription)
-                    }
-            }
-        })
-        
-        registrationTask.resume()
-    }
-    
-    // End of register customer click event
+ 
     
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+       
+        if let userlogged = segue.destination as? SearchRiderController, let user = sender as? Customer {
+            userlogged.customerLogged = user
+        }
     }
-    */
+ 
 
 }
 

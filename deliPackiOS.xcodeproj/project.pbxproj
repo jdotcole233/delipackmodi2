@@ -17,6 +17,7 @@
 		3439229122EF326C003DE59D /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439229022EF326C003DE59D /* WalkthroughPageViewController.swift */; };
 		3439229322F7877A003DE59D /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439229222F7877A003DE59D /* WalkThroughViewController.swift */; };
 		3439229522F7B4DC003DE59D /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439229422F7B4DC003DE59D /* Customer.swift */; };
+		3439229B22F7C7E7003DE59D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439229A22F7C7E7003DE59D /* NetworkService.swift */; };
 		346F994722DCF165007C928A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F994622DCF165007C928A /* AppDelegate.swift */; };
 		346F994922DCF165007C928A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F994822DCF165007C928A /* ViewController.swift */; };
 		346F994C22DCF165007C928A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346F994A22DCF165007C928A /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		3439229022EF326C003DE59D /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		3439229222F7877A003DE59D /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
 		3439229422F7B4DC003DE59D /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		3439229A22F7C7E7003DE59D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		346F994322DCF165007C928A /* deliPackiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deliPackiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346F994622DCF165007C928A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		346F994822DCF165007C928A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3439229622F7C44D003DE59D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3439229A22F7C7E7003DE59D /* NetworkService.swift */,
+				34791B9D22E80838000F5BBD /* SignInViewController.swift */,
+				34791B9F22E80D03000F5BBD /* SignUpViewController.swift */,
+				346F994822DCF165007C928A /* ViewController.swift */,
+				3439228E22EF2FE4003DE59D /* WalkthroughContentViewController.swift */,
+				3439229022EF326C003DE59D /* WalkthroughPageViewController.swift */,
+				3405B8E122DE5F1700AED941 /* ReportProblemController.swift */,
+				3427137122DE952100560713 /* ContactController.swift */,
+				3405B8DF22DD48EB00AED941 /* SearchRiderController.swift */,
+				3427137322DEA80300560713 /* ProfileController.swift */,
+				3427137522DEAB9E00560713 /* FindingRiderModalController.swift */,
+				3439229222F7877A003DE59D /* WalkThroughViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3439229722F7C48B003DE59D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				346F994A22DCF165007C928A /* Main.storyboard */,
+				3439228C22EF1A50003DE59D /* WelcomeWalkthrough.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3439229822F7C4AC003DE59D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3439229422F7B4DC003DE59D /* Customer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3439229922F7C4BE003DE59D /* Miscellaneous */ = {
+			isa = PBXGroup;
+			children = (
+				34791BA322ED1CC3000F5BBD /* DeliPackAlert.swift */,
+			);
+			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
 		346F993A22DCF165007C928A = {
 			isa = PBXGroup;
 			children = (
@@ -141,26 +187,15 @@
 		346F994522DCF165007C928A /* deliPackiOS */ = {
 			isa = PBXGroup;
 			children = (
+				3439229922F7C4BE003DE59D /* Miscellaneous */,
+				3439229822F7C4AC003DE59D /* Model */,
+				3439229722F7C48B003DE59D /* Storyboards */,
+				3439229622F7C44D003DE59D /* Controllers */,
 				346F994622DCF165007C928A /* AppDelegate.swift */,
-				346F994822DCF165007C928A /* ViewController.swift */,
-				346F994A22DCF165007C928A /* Main.storyboard */,
-				3439228C22EF1A50003DE59D /* WelcomeWalkthrough.storyboard */,
 				346F994D22DCF166007C928A /* Assets.xcassets */,
 				346F994F22DCF166007C928A /* LaunchScreen.storyboard */,
 				346F995222DCF166007C928A /* Info.plist */,
-				3405B8DF22DD48EB00AED941 /* SearchRiderController.swift */,
-				3405B8E122DE5F1700AED941 /* ReportProblemController.swift */,
-				3427137122DE952100560713 /* ContactController.swift */,
-				3427137322DEA80300560713 /* ProfileController.swift */,
-				3427137522DEAB9E00560713 /* FindingRiderModalController.swift */,
-				34791B9D22E80838000F5BBD /* SignInViewController.swift */,
-				34791B9F22E80D03000F5BBD /* SignUpViewController.swift */,
-				34791BA322ED1CC3000F5BBD /* DeliPackAlert.swift */,
 				34791BA522ED4B7F000F5BBD /* deliPackiOS-Bridging-Header.h */,
-				3439228E22EF2FE4003DE59D /* WalkthroughContentViewController.swift */,
-				3439229022EF326C003DE59D /* WalkthroughPageViewController.swift */,
-				3439229222F7877A003DE59D /* WalkThroughViewController.swift */,
-				3439229422F7B4DC003DE59D /* Customer.swift */,
 			);
 			path = deliPackiOS;
 			sourceTree = "<group>";
@@ -438,6 +473,7 @@
 				3439229122EF326C003DE59D /* WalkthroughPageViewController.swift in Sources */,
 				34791B9E22E80838000F5BBD /* SignInViewController.swift in Sources */,
 				346F994722DCF165007C928A /* AppDelegate.swift in Sources */,
+				3439229B22F7C7E7003DE59D /* NetworkService.swift in Sources */,
 				34791BA022E80D03000F5BBD /* SignUpViewController.swift in Sources */,
 				3427137622DEAB9E00560713 /* FindingRiderModalController.swift in Sources */,
 				3439229322F7877A003DE59D /* WalkThroughViewController.swift in Sources */,
