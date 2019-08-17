@@ -28,8 +28,12 @@ class SearchRiderController: UIViewController {
     @IBOutlet weak var locationFinderView: UIView!
     @IBOutlet weak var pickUpLocationResult: UITextField!
     @IBOutlet weak var deliveryLocationResult: UITextField!
-    
-    @IBOutlet weak var searcRiderButtonVar: UIButton!
+    @IBOutlet weak var welcomeMessageLabel: UILabel!
+    @IBOutlet weak var searcRiderButtonVar: UIButton! {
+        didSet{
+            searcRiderButtonVar.layer.cornerRadius = 8.0
+        }
+    }
     var googleMapView: GMSMapView?
     
    
@@ -76,11 +80,12 @@ class SearchRiderController: UIViewController {
 //        locationFinderView.layer.zPosition = 500
 //        locationFinderView.isHidden = true
         
-        if let customer = customerLogged {
-            print(customer)
-        }
+        let customer = UserDefaults.standard.value(forKey: "customerLoggedin") as? [String:Any] ?? [:]
+        welcomeMessageLabel.text = "Nice to see you! \(String(describing: customer["first_name"].unsafelyUnwrapped))"
 
     }
+    
+
     
     
     func testFunc ()

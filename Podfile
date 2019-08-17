@@ -3,12 +3,14 @@
 
 target 'deliPackiOS' do
   # Comment the next line if you don't want to use dynamic frameworks
-  # use_frameworks!
+   use_frameworks!
    pod 'Ringcaptcha'
+   pod 'GeoFire', '~> 3.0'
 
   # Pods for deliPackiOS
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Firebase/Analytics'
 
   target 'deliPackiOSTests' do
     inherit! :search_paths

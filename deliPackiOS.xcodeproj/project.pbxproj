@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		215EF252E0977E4073A52E41 /* Pods_deliPackiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5B494FF9F92D8C99EA8798 /* Pods_deliPackiOS.framework */; };
 		3405B8E022DD48EB00AED941 /* SearchRiderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3405B8DF22DD48EB00AED941 /* SearchRiderController.swift */; };
 		3405B8E222DE5F1700AED941 /* ReportProblemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3405B8E122DE5F1700AED941 /* ReportProblemController.swift */; };
 		3427137222DE952100560713 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427137122DE952100560713 /* ContactController.swift */; };
@@ -18,6 +19,11 @@
 		3439229322F7877A003DE59D /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439229222F7877A003DE59D /* WalkThroughViewController.swift */; };
 		3439229522F7B4DC003DE59D /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439229422F7B4DC003DE59D /* Customer.swift */; };
 		3439229B22F7C7E7003DE59D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439229A22F7C7E7003DE59D /* NetworkService.swift */; };
+		3439229D22F8EEFC003DE59D /* RiderFinderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439229C22F8EEFC003DE59D /* RiderFinderController.swift */; };
+		3439229F22F8EFCB003DE59D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3439229E22F8EFCB003DE59D /* GoogleService-Info.plist */; };
+		343922A222F92114003DE59D /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343922A122F92114003DE59D /* HistoryTableViewController.swift */; };
+		343922A422F92135003DE59D /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343922A322F92135003DE59D /* HistoryTableViewCell.swift */; };
+		343922A622FBAA3A003DE59D /* CustomerHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343922A522FBAA3A003DE59D /* CustomerHistoryModel.swift */; };
 		346F994722DCF165007C928A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F994622DCF165007C928A /* AppDelegate.swift */; };
 		346F994922DCF165007C928A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346F994822DCF165007C928A /* ViewController.swift */; };
 		346F994C22DCF165007C928A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346F994A22DCF165007C928A /* Main.storyboard */; };
@@ -28,9 +34,8 @@
 		34791B9E22E80838000F5BBD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34791B9D22E80838000F5BBD /* SignInViewController.swift */; };
 		34791BA022E80D03000F5BBD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34791B9F22E80D03000F5BBD /* SignUpViewController.swift */; };
 		34791BA422ED1CC3000F5BBD /* DeliPackAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34791BA322ED1CC3000F5BBD /* DeliPackAlert.swift */; };
-		5AAA84A17B59D30B75647785 /* libPods-deliPackiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BFFA42FB8A0395A6C988323 /* libPods-deliPackiOS.a */; };
-		89A3FA9E2AF3730CF3C1B751 /* libPods-deliPackiOSUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C049AEF4823ACBC1A8A15946 /* libPods-deliPackiOSUITests.a */; };
-		C618C50772AD4A6386D0E9AC /* libPods-deliPackiOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 528469EE71E4F77285B63194 /* libPods-deliPackiOSTests.a */; };
+		75D6753916312464C787F3FB /* Pods_deliPackiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FAEFA287E2DA0DB5EE67171 /* Pods_deliPackiOSUITests.framework */; };
+		83D438E22E16DC46BEA1901F /* Pods_deliPackiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B30F57FA3E96C2DA177A8D /* Pods_deliPackiOSTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24B30F57FA3E96C2DA177A8D /* Pods_deliPackiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_deliPackiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		306B2B336E1E502946105E0E /* Pods-deliPackiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliPackiOS.debug.xcconfig"; path = "Target Support Files/Pods-deliPackiOS/Pods-deliPackiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		3405B8DF22DD48EB00AED941 /* SearchRiderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRiderController.swift; sourceTree = "<group>"; };
 		3405B8E122DE5F1700AED941 /* ReportProblemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportProblemController.swift; sourceTree = "<group>"; };
@@ -63,6 +69,11 @@
 		3439229222F7877A003DE59D /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
 		3439229422F7B4DC003DE59D /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		3439229A22F7C7E7003DE59D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		3439229C22F8EEFC003DE59D /* RiderFinderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderFinderController.swift; sourceTree = "<group>"; };
+		3439229E22F8EFCB003DE59D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		343922A122F92114003DE59D /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		343922A322F92135003DE59D /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		343922A522FBAA3A003DE59D /* CustomerHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHistoryModel.swift; sourceTree = "<group>"; };
 		346F994322DCF165007C928A /* deliPackiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deliPackiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346F994622DCF165007C928A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		346F994822DCF165007C928A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,14 +91,13 @@
 		34791B9F22E80D03000F5BBD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		34791BA322ED1CC3000F5BBD /* DeliPackAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliPackAlert.swift; sourceTree = "<group>"; };
 		34791BA522ED4B7F000F5BBD /* deliPackiOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "deliPackiOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		528469EE71E4F77285B63194 /* libPods-deliPackiOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-deliPackiOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6218C39885B6259D16AC739A /* Pods-deliPackiOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliPackiOSUITests.release.xcconfig"; path = "Target Support Files/Pods-deliPackiOSUITests/Pods-deliPackiOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7BFFA42FB8A0395A6C988323 /* libPods-deliPackiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-deliPackiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B06233953A8AC1A9307731 /* Pods-deliPackiOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliPackiOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-deliPackiOSUITests/Pods-deliPackiOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9FAEFA287E2DA0DB5EE67171 /* Pods_deliPackiOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_deliPackiOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A744A65FE252725FF3973D03 /* Pods-deliPackiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliPackiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-deliPackiOSTests/Pods-deliPackiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B63E450DB6BCDD16482EBC31 /* Pods-deliPackiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliPackiOS.release.xcconfig"; path = "Target Support Files/Pods-deliPackiOS/Pods-deliPackiOS.release.xcconfig"; sourceTree = "<group>"; };
 		BDB2C2586EEA7AF2E400534E /* Pods-deliPackiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliPackiOSTests.release.xcconfig"; path = "Target Support Files/Pods-deliPackiOSTests/Pods-deliPackiOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		C049AEF4823ACBC1A8A15946 /* libPods-deliPackiOSUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-deliPackiOSUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5B494FF9F92D8C99EA8798 /* Pods_deliPackiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_deliPackiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AAA84A17B59D30B75647785 /* libPods-deliPackiOS.a in Frameworks */,
+				215EF252E0977E4073A52E41 /* Pods_deliPackiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C618C50772AD4A6386D0E9AC /* libPods-deliPackiOSTests.a in Frameworks */,
+				83D438E22E16DC46BEA1901F /* Pods_deliPackiOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89A3FA9E2AF3730CF3C1B751 /* libPods-deliPackiOSUITests.a in Frameworks */,
+				75D6753916312464C787F3FB /* Pods_deliPackiOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +131,7 @@
 		3439229622F7C44D003DE59D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				343922A022F920E4003DE59D /* TableController */,
 				3439229A22F7C7E7003DE59D /* NetworkService.swift */,
 				34791B9D22E80838000F5BBD /* SignInViewController.swift */,
 				34791B9F22E80D03000F5BBD /* SignUpViewController.swift */,
@@ -150,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				3439229422F7B4DC003DE59D /* Customer.swift */,
+				343922A522FBAA3A003DE59D /* CustomerHistoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,8 +170,18 @@
 			isa = PBXGroup;
 			children = (
 				34791BA322ED1CC3000F5BBD /* DeliPackAlert.swift */,
+				3439229C22F8EEFC003DE59D /* RiderFinderController.swift */,
 			);
 			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		343922A022F920E4003DE59D /* TableController */ = {
+			isa = PBXGroup;
+			children = (
+				343922A122F92114003DE59D /* HistoryTableViewController.swift */,
+				343922A322F92135003DE59D /* HistoryTableViewCell.swift */,
+			);
+			path = TableController;
 			sourceTree = "<group>";
 		};
 		346F993A22DCF165007C928A = {
@@ -187,6 +209,7 @@
 		346F994522DCF165007C928A /* deliPackiOS */ = {
 			isa = PBXGroup;
 			children = (
+				3439229E22F8EFCB003DE59D /* GoogleService-Info.plist */,
 				3439229922F7C4BE003DE59D /* Miscellaneous */,
 				3439229822F7C4AC003DE59D /* Model */,
 				3439229722F7C48B003DE59D /* Storyboards */,
@@ -234,9 +257,9 @@
 		7C2BE50A748EB21AC22A3E01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7BFFA42FB8A0395A6C988323 /* libPods-deliPackiOS.a */,
-				528469EE71E4F77285B63194 /* libPods-deliPackiOSTests.a */,
-				C049AEF4823ACBC1A8A15946 /* libPods-deliPackiOSUITests.a */,
+				CE5B494FF9F92D8C99EA8798 /* Pods_deliPackiOS.framework */,
+				24B30F57FA3E96C2DA177A8D /* Pods_deliPackiOSTests.framework */,
+				9FAEFA287E2DA0DB5EE67171 /* Pods_deliPackiOSUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -253,6 +276,7 @@
 				346F994022DCF165007C928A /* Frameworks */,
 				346F994122DCF165007C928A /* Resources */,
 				8DFD1CC48AEE6858794A4895 /* [CP] Copy Pods Resources */,
+				EE41DC022DB7CF57D4A3D044 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -313,6 +337,11 @@
 				TargetAttributes = {
 					346F994222DCF165007C928A = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					346F995622DCF166007C928A = {
 						CreatedOnToolsVersion = 10.1;
@@ -351,6 +380,7 @@
 			files = (
 				3439228D22EF1A50003DE59D /* WelcomeWalkthrough.storyboard in Resources */,
 				346F995122DCF166007C928A /* LaunchScreen.storyboard in Resources */,
+				3439229F22F8EFCB003DE59D /* GoogleService-Info.plist in Resources */,
 				346F994E22DCF166007C928A /* Assets.xcassets in Resources */,
 				346F994C22DCF165007C928A /* Main.storyboard in Resources */,
 			);
@@ -456,6 +486,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EE41DC022DB7CF57D4A3D044 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-deliPackiOS/Pods-deliPackiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-deliPackiOS/Pods-deliPackiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-deliPackiOS/Pods-deliPackiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -463,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				343922A422F92135003DE59D /* HistoryTableViewCell.swift in Sources */,
 				346F994922DCF165007C928A /* ViewController.swift in Sources */,
 				3439229522F7B4DC003DE59D /* Customer.swift in Sources */,
 				34791BA422ED1CC3000F5BBD /* DeliPackAlert.swift in Sources */,
@@ -471,13 +519,16 @@
 				3405B8E022DD48EB00AED941 /* SearchRiderController.swift in Sources */,
 				3439228F22EF2FE4003DE59D /* WalkthroughContentViewController.swift in Sources */,
 				3439229122EF326C003DE59D /* WalkthroughPageViewController.swift in Sources */,
+				3439229D22F8EEFC003DE59D /* RiderFinderController.swift in Sources */,
 				34791B9E22E80838000F5BBD /* SignInViewController.swift in Sources */,
 				346F994722DCF165007C928A /* AppDelegate.swift in Sources */,
 				3439229B22F7C7E7003DE59D /* NetworkService.swift in Sources */,
 				34791BA022E80D03000F5BBD /* SignUpViewController.swift in Sources */,
+				343922A222F92114003DE59D /* HistoryTableViewController.swift in Sources */,
 				3427137622DEAB9E00560713 /* FindingRiderModalController.swift in Sources */,
 				3439229322F7877A003DE59D /* WalkThroughViewController.swift in Sources */,
 				3427137422DEA80300560713 /* ProfileController.swift in Sources */,
+				343922A622FBAA3A003DE59D /* CustomerHistoryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,14 @@ import UIKit
 
 class ProfileController: UIViewController {
 
+    
+    @IBOutlet weak var customerFullName: UILabel!
+    
+    @IBOutlet weak var customerSubEmail: UIStackView!
+    @IBOutlet weak var customerPhoneNumber: UILabel!
+    @IBOutlet weak var customerEmail: UILabel!
+    
+    
     @IBAction func tellAfriendButton(_ sender: Any) {
         let tellAfriendBtn = UIActivityViewController(activityItems: ["Charley tell a friend about deli Pack"], applicationActivities: nil)
             tellAfriendBtn.popoverPresentationController?.sourceView = self.view
@@ -24,6 +32,13 @@ class ProfileController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let customerDetails = UserDefaults.standard.value(forKey: "customerLoggedin") as? [String:Any] ?? [:]
+        customerFullName.text = "\(String(describing: customerDetails["first_name"].unsafelyUnwrapped))  \(String(describing:customerDetails["last_name"].unsafelyUnwrapped))"
+        customerPhoneNumber.text = "\(String(describing: customerDetails["phone_number"].unsafelyUnwrapped))"
+        
+        
+        
 
         // Do any additional setup after loading the view.
     }

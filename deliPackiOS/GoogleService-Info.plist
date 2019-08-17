@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>636386670726-hsf592vctj83gs926bp58r656gt2p4sm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.636386670726-hsf592vctj83gs926bp58r656gt2p4sm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCEGuNtVWhhPN2ovjZf2MN2fjsuxX9UDP4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>636386670726</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.delivpackport.deliPackiOS</string>
+	<key>PROJECT_ID</key>
+	<string>delipack-2d2ca</string>
+	<key>STORAGE_BUCKET</key>
+	<string>delipack-2d2ca.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:636386670726:ios:25be9fb6b326b94c</string>
+	<key>DATABASE_URL</key>
+	<string>https://delipack-2d2ca.firebaseio.com</string>
+</dict>
+</plist>

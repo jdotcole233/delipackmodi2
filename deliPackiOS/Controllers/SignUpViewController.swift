@@ -9,8 +9,9 @@
 import UIKit
 // import Ringcaptcha
 
-enum Result {
-    case success(Customer)
+enum Result<T> {
+    case success(T)
+    case History_success([T])
     case failure(Error)
 }
 
@@ -37,7 +38,7 @@ class SignUpViewController: UIViewController {
         
         customerPassword.isSecureTextEntry = true
         customerConfirmPassword.isSecureTextEntry = true
-        networkService = NetworkService(context: self)
+        networkService = NetworkService()
         // Do any additional setup after loading the view.
         signUpButton.layer.cornerRadius = CGFloat(Int(bitPattern: 8))
         let viewtapped = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
@@ -86,9 +87,25 @@ class SignUpViewController: UIViewController {
                         ]
                         
                         customerInformation["phone_number"] = RingcaptchaVerification?.phoneNumber
-                        self.networkService?.networkRequestToServer(requestEndpoint: "registercutomer", requestMethod: "POST", requestData: customerInformation, completion: {[weak self] (result) in
+                        self.networkService?.networkRequestToServer(requestEndpoint: "registercutomer", requestMethod: "POST", requestData: customerInformation, dataModel: Customer.self, dataFlag: "LOGIN" ,completion: {[weak self] (result) in
                             switch result{
-                            case .success(let user): self?.performSegue(withIdentifier: "registertodashboard", sender: user)
+                            case .success(let user):
+                                if (user.success_cue == "Success") {
+                                    var custLog:[String: Any] = [:]
+                                    custLog["success_cue"] = user.success_cue
+                                    custLog["customer_id"] = user.customer_id
+                                    custLog["first_name"] = user.first_name
+                                    custLog["last_name"] = user.last_name
+                                    custLog["phone_number"] = user.phone_number
+                                    
+                                    UserDefaults.standard.setValue(custLog, forKey: "customerLoggedin")
+                                    NetworkService().switchViewController(storyboardid: "Main", storyboardidentifier: "searchRiderViewController")
+                                    print("user back \(user.success_cue)")
+                                    
+                                } else if (user.success_cue == "Failed") {
+                                    DeliPackAlert(context: self!, alertTitle: "Login Error", alertMessage: "Failed to log in try again later").showAlet()
+                                    return
+                                }
                             default:
                                 break
                             }
@@ -98,11 +115,6 @@ class SignUpViewController: UIViewController {
                     }) { (RingcaptchaVerification) in
                         print("cancelled")
                     }
-                
-        
-                    
-
-                    
                 }
             }
         }
