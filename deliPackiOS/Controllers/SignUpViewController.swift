@@ -11,9 +11,14 @@ import UIKit
 
 enum Result<T> {
     case success(T)
+    case failure(Error)
+}
+
+enum HistoryResult<T> {
     case History_success([T])
     case failure(Error)
 }
+
 
 class SignUpViewController: UIViewController {
 
@@ -87,7 +92,7 @@ class SignUpViewController: UIViewController {
                         ]
                         
                         customerInformation["phone_number"] = RingcaptchaVerification?.phoneNumber
-                        self.networkService?.networkRequestToServer(requestEndpoint: "registercutomer", requestMethod: "POST", requestData: customerInformation, dataModel: Customer.self, dataFlag: "LOGIN" ,completion: {[weak self] (result) in
+                        self.networkService?.networkRequestToServer(requestEndpoint: "registercutomer", requestMethod: "POST", requestData: customerInformation, dataModel: Customer.self, completion: {[weak self] (result) in
                             switch result{
                             case .success(let user):
                                 if (user.success_cue == "Success") {

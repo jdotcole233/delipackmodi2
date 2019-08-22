@@ -47,7 +47,7 @@ class SignInViewController: UIViewController {
                 ]
                 print(customerLoginData)
 
-                    self.network!.networkRequestToServer(requestEndpoint: "customer_login", requestMethod: "POST", requestData: customerLoginData, dataModel: Customer.self, dataFlag: "LOGIN") { (result) in
+                    self.network!.networkRequestToServer(requestEndpoint: "customer_login", requestMethod: "POST", requestData: customerLoginData, dataModel: Customer.self) { (result) in
                         switch result {
                         case .success(let user) :
                             if (user.success_cue == "Success") {

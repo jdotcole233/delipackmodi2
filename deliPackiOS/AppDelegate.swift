@@ -39,7 +39,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("Background fetch working")
-      
+        
+       
+        NetworkService().networkRequestToServerHistory(requestEndpoint: "customertransactionhistory", requestMethod: "POST", requestData: ["customer_id" : 16], dataModel: CustomerHistoryModel.self, completion: { (customerHistoryCallBack) in
+//            print("success \(customerHistoryCallBack)")
+         //   let mainstoryboard = UIStoryboard(name: "Main", bundle: nil)
+           // let historypage = mainstoryboard.instantiateViewController(withIdentifier: "historyViewController") as! HistoryTableViewController
+             //   historypage.customerHistory = customerHistoryCallBack
+               // self.window?.rootViewController = historypage
+//            if let historyViewController = HistoryTableViewController.self as ViewController {
+//                historyViewController.customerHistory = customerHistoryCallBack
+//            }
+            if let hn = self.window?.rootViewController as? UITabBarController {
+                print("empl \(hn)")
+                for av in hn.viewControllers! {
+                    if let ab = av as? UINavigationController {
+                        for ac in ab.viewControllers {
+                            if let historyPage = ac as? HistoryTableViewController {
+                                historyPage.customerHistory = customerHistoryCallBack
+                                historyPage.historyTable.reloadData()
+                            }
+
+                        }
+
+                    }
+                }
+
+            }
+            
+//            if let historynav = self.window?.rootViewController as? UITabBarController, let con = historynav.viewControllers {
+//                for vwcon in con {
+//                    if let aa = vwcon as? HistoryTableViewController {
+//                        aa.customerHistory = customerHistoryCallBack
+//                        print(aa)
+//                    }
+//                }
+//            }
+        })
     }
     
     

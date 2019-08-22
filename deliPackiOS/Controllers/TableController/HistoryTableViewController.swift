@@ -11,41 +11,17 @@ import UIKit
 class HistoryTableViewController: UITableViewController {
     
     var customerHistory = [CustomerHistoryModel]()
-    var n: NetworkService?
 
+    @IBOutlet var historyTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        n = NetworkService()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-//        print(customerHistory.count)
-//        if customerHistory.count <= 0 {
-//            DeliPackAlert(context: self, alertTitle: "History", alertMessage: "No History now, try again later.").showAlet()
-//        }
-        
-        n?.networkRequestToServer(requestEndpoint: "customertransactionhistory", requestMethod: "POST", requestData: ["customer_id" : 16], dataModel: CustomerHistoryModel.self, dataFlag: "HISTORY") { (result) in
-            switch result {
-            case .success(let history):
-                print("success \(history)")
-                break
-            case .failure(let error):
-                print("error \(error)")
-                break
-            default:
-                print("something went wrong")
-                break
-            }
-        }
     }
     
     
     
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -53,24 +29,25 @@ class HistoryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-//        if customerHistory.count <= 0 {
-//            DeliPackAlert(context: self, alertTitle: "History", alertMessage: "No History now, try again later.").showAlet()
-//        }
-        return 15
+        return customerHistory.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "historyCustomCell", for: indexPath) as! HistoryTableViewCell
-//        cell.companyNameLabel.text = customerHistory[indexPath.row].companyName;
-//        cell.pickUpFromLabel.text = customerHistory[indexPath.row].pickupLocation;
-//        cell.pickUpFromLabel.text = customerHistory[indexPath.row].deliveryLocation;
-//        
-        // Configure the cell...
-    
+        cell.companyNameLabel.text = customerHistory[indexPath.row].company_name
+        cell.pickUpFromLabel.text = customerHistory[indexPath.row].source
+        cell.deliverToLabel.text = customerHistory[indexPath.row].destination
         
-
+        
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var singlecustomerHistory: CustomerHistoryModel?
+        singlecustomerHistory = customerHistory[indexPath.row]
+        performSegue(withIdentifier: "historyDetailsSegue", sender: singlecustomerHistory)
     }
  
 
@@ -109,14 +86,19 @@ class HistoryTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "historyDetailsSegue" {
+            if let historyDetails = segue.destination as? HistoryDetailsViewController, let historyData = sender as? CustomerHistoryModel {
+                historyDetails.customerDetails = historyData
+            }
+//             print(self.historyTable.indexPathForSelectedRow)
+        }
     }
-    */
+
 
 }
